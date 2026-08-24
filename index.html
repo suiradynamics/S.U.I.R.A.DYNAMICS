@@ -6,13 +6,14 @@
     <title>S.U.I.R.A. Dynamics | Sistemas Unidos de Intermediación, Redes y Acceso</title>
     <style>
         :root {
-            --bg-oscuro: #070a13;
-            --card-bg: #111827;
-            --acento-cobre: #c59b67;
-            --texto-principal: #f3f4f6;
-            --texto-silenciado: #9ca3af;
-            --color-borde: rgba(197, 155, 103, 0.2);
-            --exito-verde: #10b981;
+            --bg-blanco: #ffffff;
+            --card-bg: #f8fafc;
+            --azul-marino: #0f172a;
+            --texto-negro: #1e293b;
+            --texto-silenciado: #64748b;
+            --color-borde: #e2e8f0;
+            --acento-azul: #2563eb;
+            --acento-azul-hover: #1d4ed8;
         }
         * {
             margin: 0;
@@ -21,8 +22,8 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
         body {
-            background-color: var(--bg-oscuro);
-            color: var(--texto-principal);
+            background-color: var(--bg-blanco);
+            color: var(--texto-negro);
             overflow-x: hidden;
         }
         /* Encabezado Corporativo Fijo */
@@ -35,10 +36,11 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 30px;
-            background: rgba(7, 10, 19, 0.85);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
             z-index: 1000;
             border-bottom: 1px solid var(--color-borde);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
         .logo-container {
             display: flex;
@@ -48,11 +50,11 @@
             font-size: 1.25rem;
             font-weight: 800;
             letter-spacing: 2px;
-            color: var(--texto-principal);
+            color: var(--azul-marino);
             text-transform: uppercase;
         }
         .logo span {
-            color: var(--acento-cobre);
+            color: var(--acento-azul);
         }
         .logo-subtitle {
             font-size: 0.55rem;
@@ -77,7 +79,7 @@
             display: block;
             height: 2px;
             width: 100%;
-            background-color: var(--texto-principal);
+            background-color: var(--azul-marino);
             border-radius: 2px;
             transition: 0.3s;
         }
@@ -88,8 +90,8 @@
             right: -320px;
             width: 320px;
             height: 100%;
-            background-color: var(--card-bg);
-            box-shadow: -5px 0 25px rgba(0,0,0,0.6);
+            background-color: #ffffff;
+            box-shadow: -5px 0 25px rgba(0,0,0,0.1);
             transition: right 0.35s ease;
             z-index: 2000;
             padding: 80px 30px 30px 30px;
@@ -100,16 +102,17 @@
         }
         .drawer a {
             display: block;
-            color: var(--texto-principal);
+            color: #000000;
             text-decoration: none;
-            padding: 15px 0;
+            padding: 16px 0;
             border-bottom: 1px solid var(--color-borde);
-            font-size: 1rem;
+            font-family: "Cambria", "Georgia", "Times New Roman", serif;
+            font-size: 1.1rem;
             font-weight: 600;
             transition: color 0.2s;
         }
         .drawer a:hover {
-            color: var(--acento-cobre);
+            color: var(--acento-azul);
         }
         .close-btn {
             position: absolute;
@@ -117,7 +120,7 @@
             right: 25px;
             background: none;
             border: none;
-            color: var(--texto-principal);
+            color: var(--azul-marino);
             font-size: 1.8rem;
             cursor: pointer;
         }
@@ -150,11 +153,13 @@
             flex-direction: column;
             justify-content: flex-end;
             min-height: 240px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
         }
         .bento-card:hover {
-            border-color: rgba(197, 155, 103, 0.6);
+            border-color: var(--acento-azul);
             transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
         }
         .bento-card.large {
             grid-column: span 2;
@@ -164,12 +169,12 @@
             min-height: 500px;
         }
         .bento-card h2 {
-            color: var(--acento-cobre);
+            color: var(--azul-marino);
             font-size: 1.3rem;
             margin-bottom: 10px;
         }
         .bento-card p {
-            color: var(--texto-silenciado);
+            color: var(--texto-negro);
             font-size: 0.95rem;
             line-height: 1.5;
         }
@@ -180,17 +185,18 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.35;
+            opacity: 0.85;
             z-index: 1;
         }
         .card-content {
             position: relative;
             z-index: 2;
-            background: linear-gradient(to top, rgba(17,24,39,0.95) 20%, rgba(17,24,39,0.4) 80%);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
             margin: -30px;
             padding: 30px;
+            border-top: 1px solid var(--color-borde);
         }
-
         /* Secciones Generales */
         .section-container {
             max-width: 1000px;
@@ -200,7 +206,7 @@
         .back-link {
             display: inline-block;
             margin-bottom: 20px;
-            color: var(--acento-cobre);
+            color: var(--acento-azul);
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
@@ -215,6 +221,7 @@
             border-radius: 16px;
             border: 1px solid var(--color-borde);
             margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
         .content-box {
             background-color: var(--card-bg);
@@ -223,7 +230,6 @@
             padding: 35px;
             margin-bottom: 25px;
         }
-
         /* Tarjetas de Categorías de Distribución */
         .categories-grid {
             display: grid;
@@ -232,14 +238,16 @@
             margin-top: 25px;
         }
         .cat-card {
-            background-color: var(--card-bg);
+            background-color: #ffffff;
             border: 1px solid var(--color-borde);
             border-radius: 16px;
             overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
         }
         .cat-card:hover {
             transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
         }
         .cat-card img {
             width: 100%;
@@ -250,16 +258,15 @@
             padding: 20px;
         }
         .cat-card-body h4 {
-            color: var(--acento-cobre);
+            color: var(--azul-marino);
             font-size: 1.1rem;
             margin-bottom: 8px;
         }
         .cat-card-body p {
-            color: var(--texto-silenciado);
+            color: var(--texto-negro);
             font-size: 0.9rem;
             line-height: 1.4;
         }
-
         /* Formulario de Postulación */
         .form-group {
             margin-bottom: 20px;
@@ -267,7 +274,7 @@
         }
         .form-group label {
             display: block;
-            color: var(--texto-principal);
+            color: var(--azul-marino);
             font-size: 0.9rem;
             margin-bottom: 8px;
             font-weight: 600;
@@ -275,20 +282,20 @@
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 12px 16px;
-            background-color: var(--bg-oscuro);
+            background-color: #ffffff;
             border: 1px solid var(--color-borde);
             border-radius: 8px;
-            color: var(--texto-principal);
+            color: var(--texto-negro);
             font-size: 0.95rem;
             outline: none;
             transition: border-color 0.2s;
         }
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            border-color: var(--acento-cobre);
+            border-color: var(--acento-azul);
         }
         .btn-submit {
-            background-color: var(--acento-cobre);
-            color: #fff;
+            background-color: var(--azul-marino);
+            color: #ffffff;
             padding: 14px 30px;
             border: none;
             border-radius: 8px;
@@ -296,19 +303,18 @@
             font-size: 1rem;
             cursor: pointer;
             width: 100%;
-            transition: opacity 0.2s;
+            transition: background-color 0.2s;
         }
         .btn-submit:hover {
-            opacity: 0.9;
+            background-color: var(--acento-azul);
         }
-
         /* Botón Flotante de WhatsApp B2B */
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
             right: 25px;
             background-color: #25d366;
-            color: #fff;
+            color: #ffffff;
             border-radius: 50px;
             padding: 12px 22px;
             display: flex;
@@ -317,20 +323,19 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
             z-index: 3000;
             transition: transform 0.2s, box-shadow 0.2s;
         }
         .whatsapp-float:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
         }
         .whatsapp-icon {
             width: 20px;
             height: 20px;
             fill: currentColor;
         }
-
         /* Footer Corporativo */
         footer {
             text-align: center;
@@ -338,16 +343,16 @@
             border-top: 1px solid var(--color-borde);
             color: var(--texto-silenciado);
             font-size: 0.8rem;
-            background-color: rgba(7, 10, 19, 0.95);
+            background-color: #ffffff;
         }
         footer .footer-brand {
-            color: var(--acento-cobre);
+            color: var(--azul-marino);
             margin-top: 6px;
             letter-spacing: 1px;
             text-transform: uppercase;
             font-size: 0.7rem;
+            font-weight: 700;
         }
-
         /* Responsive */
         @media (max-width: 768px) {
             .bento-grid {
@@ -369,7 +374,6 @@
     </style>
 </head>
 <body>
-
     <!-- Encabezado con Nombre y Acrónimo -->
     <header>
         <div class="logo-container">
@@ -382,7 +386,6 @@
             <span></span>
         </button>
     </header>
-
     <!-- Menú Lateral (Drawer) -->
     <nav class="drawer" id="navDrawer">
         <button class="close-btn" onclick="toggleMenu()">&times;</button>
@@ -390,7 +393,6 @@
         <a href="#" onclick="switchView('commerce'); return false;">Commerce Division</a>
         <a href="#" onclick="switchView('producers'); return false;">Programa para Productores Independientes</a>
     </nav>
-
     <!-- VISTA 1: INICIO (Estilo Bento Pro con Imágenes) -->
     <div id="view-home" class="view-section active">
         <main class="bento-grid">
@@ -401,21 +403,18 @@
                     <p>Centralizamos la intermediación y el acceso a redes estratégicas de distribución, conectando la capacidad industrial con los mercados de mayor exigencia.</p>
                 </div>
             </div>
-
             <div class="bento-card large">
-                <div class="card-content" style="background: var(--card-bg);">
+                <div class="card-content" style="background: var(--card-bg); border-top: none;">
                     <h2>Profesionales Comprometidos</h2>
                     <p>Un equipo directivo con rigor analítico, discreción absoluta y el estándar más alto de ejecución en cada corretaje y alianza comercial.</p>
                 </div>
             </div>
-
             <div class="bento-card">
-                <div class="card-content" style="background: var(--card-bg);">
+                <div class="card-content" style="background: var(--card-bg); border-top: none;">
                     <h2>Resolución y Soporte</h2>
                     <p>Intervenimos directamente en la cadena para disolver cuellos de botella operativos y proteger los activos de nuestros socios.</p>
                 </div>
             </div>
-
             <div class="bento-card large">
                 <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80" alt="Eficiencia Comercial" class="card-bg-img">
                 <div class="card-content">
@@ -425,40 +424,35 @@
             </div>
         </main>
     </div>
-
     <!-- VISTA 2: COMMERCE DIVISION -->
     <div id="view-commerce" class="view-section">
         <div class="section-container">
             <a href="#" onclick="switchView('home'); return false;" class="back-link">&larr; Volver al Inicio</a>
             
-            <h2 style="color: var(--acento-cobre); font-size: 2rem; margin-bottom: 10px;">Commerce Division</h2>
-            <p style="color: var(--texto-silenciado); margin-bottom: 25px;">El puente estructurado entre productores prémium y los canales de distribución de élite.</p>
+            <h2 style="color: var(--azul-marino); font-size: 2rem; margin-bottom: 10px;">Commerce Division</h2>
+            <p style="color: var(--texto-negro); margin-bottom: 25px;">El puente estructurado entre productores prémium y los canales de distribución de élite.</p>
             
             <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" alt="Commerce Division S.U.I.R.A." class="hero-banner">
-
             <div class="content-box">
-                <h3 style="color: var(--texto-principal); margin-bottom: 12px;">Nuestra Operación</h3>
-                <p style="color: var(--texto-silenciado); line-height: 1.6; margin-bottom: 15px;">
+                <h3 style="color: var(--azul-marino); margin-bottom: 12px;">Nuestra Operación</h3>
+                <p style="color: var(--texto-negro); line-height: 1.6; margin-bottom: 15px;">
                     En la división de comercio de <strong>S.U.I.R.A. Dynamics</strong> operamos como el conector definitivo para marcas que buscan posicionamiento en tiendas especializadas, centros de entrenamiento de alto rendimiento y escaparates de gran rotación en Panamá.
                 </p>
-                <p style="color: var(--texto-silenciado); line-height: 1.6;">
+                <p style="color: var(--texto-negro); line-height: 1.6;">
                     Garantizamos que la logística de entrega y los acuerdos comerciales fluyan sin intermediarios innecesarios, asegurando rentabilidad y estabilidad a largo plazo.
                 </p>
             </div>
-
             <!-- Sección Canales de Distribución (Enfoque Comprador) -->
-            <h3 style="color: var(--texto-principal); font-size: 1.4rem; margin-top: 40px; margin-bottom: 10px;">Líneas de Suministro y Categorías</h3>
-            <p style="color: var(--texto-silenciado); font-size: 0.95rem;">Abastecemos al canal retail especializado y centros de alto rendimiento con líneas de alta rotación:</p>
-
+            <h3 style="color: var(--azul-marino); font-size: 1.4rem; margin-top: 40px; margin-bottom: 10px;">Líneas de Suministro y Categorías</h3>
+            <p style="color: var(--texto-negro); font-size: 0.95rem;">Abastecemos al canal retail especializado y centros de alto rendimiento con líneas de alta rotación:</p>
             <div class="categories-grid">
                 <div class="cat-card">
-                    <img src="https://images.unsplash.com/photo-1528750997573-59b89d66f4f7?auto=format&fit=crop&w=600&q=80" alt="Lácteos de Especialidad">
+                    <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=600&q=80" alt="Lácteos de Especialidad">
                     <div class="cat-card-body">
                         <h4>Lácteos de Especialidad</h4>
-                        <p>Quesos madurados, productos de cabra y derivados artesanales procesados bajo estrictos estándares de inocuidad.</p>
+                        <p>Quesos madurados, productos de cabra y derivados artesanales procesados bajo strictly estándares de inocuidad.</p>
                     </div>
                 </div>
-
                 <div class="cat-card">
                     <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Café de Altura">
                     <div class="cat-card-body">
@@ -466,7 +460,6 @@
                         <p>Lotes seleccionados, tuestes especiales y perfiles de taza de alta puntuación orientados a tiendas prémium y cafeterías.</p>
                     </div>
                 </div>
-
                 <div class="cat-card">
                     <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=600&q=80" alt="Alimentos Funcionales y Proteicos">
                     <div class="cat-card-body">
@@ -475,129 +468,26 @@
                     </div>
                 </div>
             </div>
-
             <div class="content-box" style="text-align: center; margin-top: 40px;">
-                <h3 style="color: var(--texto-principal); margin-bottom: 8px;">Canal de Negociación Directa</h3>
-                <p style="color: var(--texto-silenciado); font-size: 0.9rem; margin-bottom: 20px;">Para cotizaciones de abastecimiento o alianzas de distribución:</p>
-                <a href="mailto:trade@suiradynamics.com" style="display: inline-block; background-color: var(--acento-cobre); color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: bold;">trade@suiradynamics.com</a>
+                <h3 style="color: var(--azul-marino); margin-bottom: 8px;">Canal de Negociación Directa</h3>
+                <p style="color: var(--texto-negro); font-size: 0.9rem; margin-bottom: 20px;">Para cotizaciones de abastecimiento o alianzas de distribución:</p>
+                <a href="mailto:trade@suiradynamics.com" style="display: inline-block; background-color: var(--azul-marino); color: #fff; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: bold;">trade@suiradynamics.com</a>
             </div>
         </div>
     </div>
-
     <!-- VISTA 3: PROGRAMA PARA PRODUCTORES INDEPENDIENTES -->
     <div id="view-producers" class="view-section">
         <div class="section-container">
             <a href="#" onclick="switchView('home'); return false;" class="back-link">&larr; Volver al Inicio</a>
             
-            <h2 style="color: var(--acento-cobre); font-size: 2rem; margin-bottom: 10px;">Programa para Productores Independientes</h2>
-            <p style="color: var(--texto-silenciado); margin-bottom: 25px;">Impulsamos la capacidad de tu finca o taller artesanal para llegar a las grandes vitrinas.</p>
+            <h2 style="color: var(--azul-marino); font-size: 2rem; margin-bottom: 10px;">Programa para Productores Independientes</h2>
+            <p style="color: var(--texto-negro); margin-bottom: 25px;">Impulsamos la capacidad de tu finca o taller artesanal para llegar a las grandes vitrinas.</p>
             
             <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80" alt="Productores Independientes S.U.I.R.A." class="hero-banner">
-
             <div class="content-box">
-                <h3 style="color: var(--texto-principal); margin-bottom: 12px;">Llevamos tu marca al mercado corporativo</h3>
-                <p style="color: var(--texto-silenciado); line-height: 1.6; margin-bottom: 15px;">
+                <h3 style="color: var(--azul-marino); margin-bottom: 12px;">Llevamos tu marca al mercado corporativo</h3>
+                <p style="color: var(--texto-negro); line-height: 1.6; margin-bottom: 15px;">
                     Sabemos que producir con excelencia requiere toda tu atención. En <strong>S.U.I.R.A. Dynamics</strong> nos convertimos en tu aliado estratégico para conectar tus productos artesanales con el sector retail, supermercados de especialidad y hoteles en la capital.
                 </p>
-                <p style="color: var(--texto-silenciado); line-height: 1.6;">
-                    Nos encargamos de la gestión logística, la representación comercial y te acompañamos en los procesos de formalización sanitaria (MINSA / APA) para que tu marca cumpla con todos los requisitos del mercado formal.
-                </p>
-            </div>
-
-            <!-- Formulario de Postulación -->
-            <div class="content-box">
-                <h3 style="color: var(--acento-cobre); margin-bottom: 8px; text-align: center;">Formulario de Postulación de Productos</h3>
-                <p style="color: var(--texto-silenciado); font-size: 0.9rem; margin-bottom: 25px; text-align: center;">Completa tus datos para evaluar el potencial de tu marca e iniciar el proceso de revisión de muestras.</p>
-
-                <form onsubmit="handleFormSubmit(event)">
-                    <div class="form-group">
-                        <label for="brandName">Nombre de la marca o Finca</label>
-                        <input type="text" id="brandName" required placeholder="Ej. Hacienda El Roble / Lácteos Artesanales">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="productType">Tipo de producto</label>
-                        <select id="productType" required>
-                            <option value="" disabled selected>Selecciona una categoría</option>
-                            <option value="Lácteos">Lácteos de Especialidad (Quesos, Yogures, etc.)</option>
-                            <option value="Café">Café de Altura / Especialidad</option>
-                            <option value="Conservas">Conservas, Salsas y mermeladas</option>
-                            <option value="Proteicos">Alimentos Funcionales / Proteicos</option>
-                            <option value="Otros">Otros productos artesanales</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="sanitaryStatus">Estado de Registro Sanitario (MINSA / APA)</label>
-                        <select id="sanitaryStatus" required>
-                            <option value="" disabled selected>Selecciona el estado actual</option>
-                            <option value="Si">Sí, cuenta con Registro Sanitario al día</option>
-                            <option value="En proceso">En proceso de trámite</option>
-                            <option value="No">No cuenta aún (Requiero orientación)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="sampleRequest">Solicitud para envío de muestras</label>
-                        <select id="sampleRequest" required>
-                            <option value="" disabled selected>¿Tienes disposición de enviar lotes de prueba?</option>
-                            <option value="Disponible">Sí, listo para enviar muestras</option>
-                            <option value="Consulta">Deseo coordinar detalles antes del envío</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="contactInfo">Teléfono de contacto / WhatsApp</label>
-                        <input type="tel" id="contactInfo" required placeholder="+507 6000-0000">
-                    </div>
-
-                    <button type="submit" class="btn-submit">Enviar Postulación</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Botón Flotante de WhatsApp B2B Directo -->
-    <a href="https://wa.me/50762248170?text=Hola,%20me%20contacto%20desde%20el%20sitio%20web%20de%20S.U.I.R.A.%20Dynamics%20para%20consultar%20sobre%20sus%20servicios%20comerciales." target="_blank" class="whatsapp-float" aria-label="Contacto WhatsApp Commercial">
-        <svg class="whatsapp-icon" viewBox="0 0 24 24">
-            <path d="M12.031 0c-6.627 0-12 5.373-12 12 0 2.159.57 4.26 1.655 6.103l-1.686 6.164 6.303-1.653c1.782.97 3.799 1.486 5.856 1.486 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12zm6.208 17.037c-.261.734-1.528 1.401-2.122 1.442-.594.041-1.348.199-4.028-.853-3.238-1.272-5.289-4.577-5.45-4.792-.161-.215-1.311-1.747-1.311-3.332 0-1.585.831-2.366 1.127-2.688.297-.322.651-.403.869-.403.218 0 .436.002.627.011.202.01.472-.077.737.56.265.637.901 2.202.981 2.363.08.161.133.349.027.563-.107.215-.161.349-.322.537-.161.188-.338.419-.483.562-.161.161-.329.336-.141.659.188.322.836 1.381 1.798 2.238 1.236 1.1 2.278 1.442 2.6 1.576.322.134.51.107.7-.107.188-.215.805-.939 1.019-1.261.215-.322.429-.268.724-.161.295.107 1.874.885 2.196 1.046.322.161.537.242.618.376.081.134.081.777-.18 1.511z"/>
-        </svg>
-        <span class="whatsapp-text">Contacto B2B</span>
-    </a>
-
-    <!-- Footer Corporativo -->
-    <footer>
-        <p>&copy; 2026 S.U.I.R.A. Dynamics. All rights reserved.</p>
-        <p class="footer-brand">Sistemas Unidos de Intermediación, Redes y Acceso</p>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            document.getElementById('navDrawer').classList.toggle('open');
-        }
-
-        function switchView(viewName) {
-            document.querySelectorAll('.view-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            if(viewName === 'home') {
-                document.getElementById('view-home').classList.add('active');
-            } else if(viewName === 'commerce') {
-                document.getElementById('view-commerce').classList.add('active');
-            } else if(viewName === 'producers') {
-                document.getElementById('view-producers').classList.add('active');
-            }
-            
-            document.getElementById('navDrawer').classList.remove('open');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            alert("Gracias por enviar tu postulación. El equipo de S.U.I.R.A. Dynamics revisará la información de tu marca y te contactará a la brevedad.");
-            e.target.reset();
-        }
-    </script>
-</body>
-</html>
+                <p style="color: var(--texto-negro); line-height: 1.6;">
+                    Nos encargamos de la gestión logística, la representación comercial y te acompañamos en los procesos de f
